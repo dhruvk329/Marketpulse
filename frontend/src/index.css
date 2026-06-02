@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  background: #0a0e0f;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  color: #e8e6df;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(900px 500px at 85% -10%, rgba(63, 209, 122, 0.06), transparent 60%),
+    radial-gradient(700px 400px at 5% 100%, rgba(214, 166, 74, 0.05), transparent 60%);
+  background-attachment: fixed;
+}
+
+/* faint grid texture for terminal feel */
+.grid-texture {
+  background-image:
+    linear-gradient(rgba(35, 46, 51, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(35, 46, 51, 0.35) 1px, transparent 1px);
+  background-size: 38px 38px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0e0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #232e33;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2f3d43;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.rise {
+  animation: rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.ticker-track {
+  animation: ticker 40s linear infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+.live-dot {
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
